@@ -136,7 +136,6 @@ let isUserSeeking = false;
 const el = {
   bgImage: document.querySelector('.bg-image'),
   liveClock: document.getElementById('live-clock'),
-  onlineCount: document.getElementById('online-count'),
   
   vinylDisc: document.getElementById('vinyl-disc'),
   vinylArtwork: document.getElementById('vinyl-artwork'),
@@ -486,16 +485,6 @@ function initHUD() {
   }
   updateClock();
   setInterval(updateClock, 1000);
-  
-  // 2. Simulated Live Online Counter
-  let currentOnline = Math.floor(Math.random() * (45 - 25 + 1)) + 25;
-  el.onlineCount.textContent = currentOnline;
-  
-  setInterval(() => {
-    const delta = Math.floor(Math.random() * 5) - 2;
-    currentOnline = Math.max(20, Math.min(55, currentOnline + delta));
-    el.onlineCount.textContent = currentOnline;
-  }, 7000);
 }
 
 /* ==========================================================================
